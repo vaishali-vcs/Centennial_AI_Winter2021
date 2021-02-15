@@ -1,1 +1,3 @@
-node_modules/*
+mongodb_nodejs_demo/node_modules/*
+course_demo/*
+EJS_TodoList_v1/*
