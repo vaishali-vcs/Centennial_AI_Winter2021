@@ -1,3 +1,4 @@
 mongodb_nodejs_auth_demo/node_modules/*
-course_demo/*
-EJS_TodoList_v1/*
+course_demo/node_modules/*
+EJS_TodoList_v1/node_modules/*
+angular_demo/node_modules/*
