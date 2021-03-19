@@ -34,7 +34,7 @@ export class Cart
       }
     }
 
-    removeLine(id: number): void{
+    removeLine(id?: number): void{
       const index = this.lines.findIndex(l => l.book._id === id);
       this.lines.splice(index, 1);
       this.recalculate();
@@ -67,6 +67,17 @@ export class CartLine
 {
   constructor(public book: Book, public quantity: number)
   {
+  }
 
+  get lineTotal(): number
+  {
+      if (this.book.price)
+    {
+      return this.book.price * this.quantity;
+    }
+    else
+    {
+      return 0;
+    }
   }
 }

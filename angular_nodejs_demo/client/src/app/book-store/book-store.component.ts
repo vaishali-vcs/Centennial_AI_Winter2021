@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../model/book.model';
 import { BookRepository } from '../model/book.repository';
 import { Cart } from '../model/cart.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-store',
@@ -14,7 +15,7 @@ export class BookStoreComponent implements OnInit {
   public selectedPage: number;
 
   constructor(private repository: BookRepository,
-              private cart: Cart) {
+              private cart: Cart, private router: Router) {
     this.booksPerPage = 4;
     this.selectedPage = 1;
   }
@@ -55,5 +56,6 @@ export class BookStoreComponent implements OnInit {
   addBookToCart(book: Book): void
   {
     this.cart.addLine(book);
+    this.router.navigateByUrl('/cart');
   }
 }
